@@ -9,6 +9,6 @@ public class KafkaListeners {
     @KafkaListener(topics = "code",
                         groupId = "groupID")
     void listener(String data) {
-        System.out.println("Listener received "+ data +" (❁´◡`❁)");
+        System.out.println("Listener received "+ data +" ❤");
     }
 }
