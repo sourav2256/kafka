@@ -1,5 +1,6 @@
 package com.sourav.kafka;
 
+import com.sourav.kafka.model.Message;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
@@ -7,8 +8,9 @@ import org.springframework.stereotype.Component;
 public class KafkaListeners {
 
     @KafkaListener(topics = "code",
-                        groupId = "groupID")
-    void listener(String data) {
-        System.out.println("Listener received "+ data +" ❤");
+            groupId = "groupID",
+            containerFactory = "factory")
+    void listener(Message data) {
+        System.out.println("Listener received " + data + " ❤");
     }
 }
